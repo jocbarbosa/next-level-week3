@@ -47,6 +47,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 10;
+}
+
+#page-map .leaflet-container {
+    z-index: 5;
 }
 
 #page-map .create-orphanage:hover {
