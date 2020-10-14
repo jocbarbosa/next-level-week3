@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaSignInAlt } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 import '../styles/global.css';
 import '../styles/pages/landing.css';
@@ -22,9 +23,9 @@ function Landing() {
                     <span>Fortaleza</span>
                 </div>
 
-                <a href="#" className="enter-app">
+                <Link to="/app" className="enter-app">
                     <FaSignInAlt size={20} color="#4f4f4f" />
-                </a>
+                </Link>
             </div>
 
         </div>
