@@ -30,6 +30,22 @@ export default {
                 Detail: error
             });
         }
+    },
+
+    async show(request: Request, response: Response) {
+        const orphanagesRepository = getRepository(Orphanage);
+        const id = request.params.id;
+
+        try {
+            const orphanage = await orphanagesRepository.findOneOrFail(id);
+
+            return response.json(orphanage);
+        } catch (error) {
+            response.status(500).json({
+                Message: 'Error',
+                Detail: error
+            });
+        }
 
     }
 }
