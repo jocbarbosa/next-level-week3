@@ -34,7 +34,9 @@ export default {
         const orphanagesRepository = getRepository(Orphanage);
 
         try {
-            const orphanages = await orphanagesRepository.find();
+            const orphanages = await orphanagesRepository.find({
+                relations: ['images']
+            });
 
             return response.json(orphanages);
         } catch (error) {
@@ -50,7 +52,9 @@ export default {
         const id = request.params.id;
 
         try {
-            const orphanage = await orphanagesRepository.findOneOrFail(id);
+            const orphanage = await orphanagesRepository.findOneOrFail(id, {
+                relations: ['images']
+            });
 
             return response.json(orphanage);
         } catch (error) {
